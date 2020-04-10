@@ -1,0 +1,24 @@
+.all-orders{
+    margin-top: 10%;
+    .listStatus{
+        margin-left: 10px;
+        text-align: center;
+        .active{
+            background-color: #e52d27;
+            border: 1px solid #e52d27;
+            font-weight: bolder;
+        }
+    }
+}
+
+@media only screen and (max-device-width: 768px) {
+    .all-orders{
+        margin-top: 18%;
+    }
+}
+
+@media only screen and (max-device-width: 480px) {
+    .all-orders{
+        margin-top: 25%;
+    }
+}

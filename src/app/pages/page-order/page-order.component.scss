@@ -1,0 +1,25 @@
+.bodyBackground{
+    width: 100vw;
+    height: 95vh;
+    background-image: url(../../../assets/fondo.png);
+.order{
+    padding-top: 130px;
+    width: 100%;
+    .card{
+        border:#e52d27 solid 1pt;
+
+        .card-header{
+            background-color:#e52d27;
+            height: 28px;                                            }
+        button{
+            text-decoration: none;
+            color:rgb(250, 248, 248);
+            font-family: 'Cabin', sans-serif;
+            font-size: 18px;
+            margin-top: -20px;
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
+}

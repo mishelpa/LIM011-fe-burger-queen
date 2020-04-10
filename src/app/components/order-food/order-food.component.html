@@ -1,0 +1,20 @@
+<section class="container">
+    <div class="card mb-3" style="width: 100%;">
+      <div class="card-header text-center">Mesero</div>
+      <div class="card-body">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text name-client" id="basic-addon1">Cliente</span>
+          </div>
+          <input type="text" class="form-control input-name-client" [(ngModel)]=nameClient placeholder="Nombre del cliente" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+        <div class="col-12"><app-bill-order></app-bill-order></div>
+        <div class="mx-auto my-4 p-1 div-total-bill">
+          <span class="total-bill" ><b>TOTAL: {{getTotalBill()}}</b></span>
+        </div>
+        <div class="btn-post-order">
+          <button type="button" class="btn" (click)="postOrderFood()">Enviar Pedido</button>
+        </div>
+      </div>
+    </div>
+  </section>

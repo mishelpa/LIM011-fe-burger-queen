@@ -1,0 +1,111 @@
+
+.all-bill{
+
+    justify-content: space-between;
+    margin-right: 2%;
+  
+   
+    .bill{
+        padding-bottom: 10px;
+        border: 2px solid #E9E9E9;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.89);
+        img{
+          height: 100%;
+        }
+  
+        p{
+          font-size: 70%;
+        }
+    }
+  
+  }
+  
+  .deleteOrder{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    font-size: 20px;
+  }
+  
+  .details-order{
+    font-size: 100%;
+    margin-left: 5%;
+  }
+  
+  .products-order{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    font-size: 80%;
+    margin-bottom: 10%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.89);
+    border: gray 1pt solid; 
+    padding: 2% 1%;
+  }
+  
+  .img-product{
+    width: 50px;
+    max-height: 50px;
+  }
+  
+  .button-orders{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .btn-order{
+      border-radius: 5px;
+      font-size: 80%;
+      width: 70%;
+      height: 35px;
+      margin-bottom: 2%;
+      background-color: white;
+      font-size: 15px;
+    }
+    .btn-order:hover{
+      background-color: red;
+    }
+  }
+  .modal-header{
+    background-color: #E52D27;
+    color: white;
+    span{
+      color: white;
+    }
+  }
+  
+  
+  .orderPending{
+    .header-order{
+      color:#EE7800;
+    }
+    .btn-order:hover{
+      background-color:  #EE7800;
+    }
+  }
+  
+  .orderDelivering{
+    .header-order{
+      color: #1976D2;
+    }
+    .btn-order:hover{
+      background-color:  #1976D2;
+    }
+  }
+  
+  .orderDelivered{
+    .header-order{
+      color: #560C06;
+    }
+    .btn-order:hover{
+      background-color:  #560C06;
+    }
+  }
+  
+  @media only screen and (max-device-width: 768px) {
+    .all-bill{
+      justify-content: center;
+      .bill{
+        margin-left: 3%;
+      }
+    }
+  }

@@ -1,0 +1,18 @@
+<section class="bill">
+    <table style="width:100%">
+      <tr>
+        <th>Cantidad</th>
+        <th class="text-center">Producto</th>
+        <th>Precio</th>
+        <th>Total</th>
+      </tr>
+      <tr *ngFor="let order of orders">
+        <td><input type="number" class="qty-product text-center" value="" [(ngModel)]=order.quantity aria-describedby="basic-addon1"></td>
+        <td >{{order.data.name}}</td>
+        <td >{{order.data.price}}</td>
+        <td >{{order.data.price*order.quantity}}</td>
+        <td><button type="button" class="btn btn-danger btnDelete" title="Eliminar" (click)="deleteProductOfBill(order)"><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
+      </tr>
+    </table>
+  </section>
+  

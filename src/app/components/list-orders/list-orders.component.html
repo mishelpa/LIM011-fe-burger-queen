@@ -1,0 +1,73 @@
+<section class="container-fluid">
+    <div class="row all-bill">
+      <div class="col-12 col-md-4 bill" *ngFor="let order of orderFilter">
+        <div class="orderMain" [ngClass]=
+        "{'orderDelivered':order.data.status ==='delivered',
+          'orderDelivering':order.data.status ==='delivering',
+          'orderPending':order.data.status ==='pending',
+          'orderCanceled':order.data.status ==='canceled'}"
+        >
+        <!-- <i class="fa fa-times-circle deleteOrder" (click)="deleteAllOrder(order)"></i> -->
+        <div>
+          <div class="text-center header-order">
+            <span *ngIf="order.data.status ==='pending'"><b>ORDEN PENDIENTE</b></span>
+            <span *ngIf="order.data.status ==='delivering'"><b>ORDEN LISTA PARA SERVIR</b></span>
+            <span *ngIf="order.data.status ==='delivered'"><b>ORDEN ENTREGADA</b></span>
+            <span *ngIf="order.data.status ==='canceled'"><b>ORDEN ANULADA</b></span>
+          </div>
+          <div class="details-order">
+            <span><b>Cliente: {{order.data.client}}</b></span>
+          </div>
+  
+        </div> 
+        <div class="container products-order">
+          <table style="width:100%">
+            <tr class="py-3" *ngFor="let product of order.data.products">
+              <th>{{product.qty}}</th>
+              <th *ngIf="product.product!==undefined" class="text-center">{{product.product.name}}</th>
+              <th *ngIf="product.product!==undefined" >S/. {{product.product.price}}</th>
+              <th  *ngIf="product.product!==undefined" >S/.{{product.qty*product.product.price}}</th>
+            </tr>
+          </table>
+        </div>
+        <button class="btn-order btn-outline-danger"  *ngIf="statusOrder==='pending'" (click)="getOrdersbyId(order.id)" data-toggle="modal" data-target="#exampleModalCenter">Detalles</button>
+      <!--   <div class="button-orders">
+          <button class="btn-order btn-outline-danger"  *ngIf="statusOrder==='pending'" (click)="getOrdersbyId(order._id)" data-toggle="modal" data-target="#exampleModalCenter">Detalles</button>
+          <button class="btn-order btn-outline-danger" *ngIf="statusOrder==='pending'" (click)="changeStatusOrder(order)">Enviar a Mesa</button>
+          <button class="btn-order btn-outline-danger" *ngIf="statusOrder==='pending'" (click)="cancelOrder(order)">Anular pedido</button>
+          <button class="btn-order btn-outline-danger" *ngIf="statusOrder==='delivering'" (click)="changeStatusOrder(order)">Pedido Entregado</button>
+        </div> -->
+      </div>
+    </div>
+    </div>
+
+    <div class="modal fade " id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">Detalles del pedido</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <table class="container" style="width:90%">
+              <tr>
+                <th>Cantidad</th>
+                <th>Imagen</th>
+                <th class="text-center">Producto</th>
+                <th>Tipo</th>
+              </tr>
+              <tr *ngFor="let orderId of orderById.data.products">
+                <td >{{orderId.qty}}</td>
+                <td><img src="{{orderId.product.image}}" class="img-product" alt=""></td>
+                <td>{{orderId.product.name}}</td>
+                <td>{{orderId.product.type}}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>

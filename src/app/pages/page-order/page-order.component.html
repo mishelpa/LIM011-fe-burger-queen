@@ -1,0 +1,38 @@
+<section class = "bodyBackground col-12">
+<section class="container mt-1">
+  <app-nav></app-nav>
+</section>
+<section class="container-fluid order">
+  <div class="row">
+    <div class="accordion col-6" id="accordionExample">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+            <button class="btn desayuno btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" (click)="typeDesayuno()">
+              <b>Desayuno</b> 
+            </button>
+        </div>
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div class="card-body">
+            <app-order-products [typeProduct]="type"></app-order-products>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+            <button class="btn btn-link cena collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" (click)="typeCena()">
+              <b>Almuerzo y cena</b> 
+            </button>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+          <div class="card-body">
+            <app-order-products [typeProduct]="type"></app-order-products>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <app-order-food></app-order-food>
+    </div>
+  </div>
+</section>
+<section>

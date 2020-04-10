@@ -1,0 +1,27 @@
+
+<div class="row all-orders">
+    <div class="col-12 col-md-2">
+      <div class="list-group listStatus" id="list-tab" role="tablist">
+        <a class="list-group-item list-group-item-action active" id="pending" (click)= "getStatus('pending')" data-toggle="list" href="#list-pending" role="tab" aria-controls="pending" >Pendientes</a>
+        <a class="list-group-item list-group-item-action" id="delivering" (click)= getStatus($event.target.id) data-toggle="list" href="#list-delivering" role="tab" aria-controls="delivering">Enviados a Mesa</a>
+        <a class="list-group-item list-group-item-action" id="delivered" (click)= getStatus($event.target.id) data-toggle="list" href="#list-delivered" role="tab" aria-controls="delivered">Entregados</a>
+        <a class="list-group-item list-group-item-action" id="canceled" (click)= getStatus($event.target.id) data-toggle="list" href="#list-canceled" role="tab" aria-controls="canceled">Anulados</a>
+      </div>
+    </div>
+    <div class="col-12 col-md-10">
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="list-pending" role="tabpanel" aria-labelledby="pending">
+          <app-list-orders [statusOrder]="statusOrders"></app-list-orders>
+        </div>
+        <div class="tab-pane fade" id="list-canceled" role="tabpanel" aria-labelledby="canceled">
+          <app-list-orders [statusOrder]="statusOrders"></app-list-orders>
+        </div>
+        <div class="tab-pane fade" id="list-delivering" role="tabpanel" aria-labelledby="delivering">
+          <app-list-orders [statusOrder]="statusOrders"></app-list-orders>
+        </div>
+        <div class="tab-pane fade" id="list-delivered" role="tabpanel" aria-labelledby="delivered">
+          <app-list-orders [statusOrder]="statusOrders"></app-list-orders>
+        </div>
+      </div>
+    </div>
+  </div>
