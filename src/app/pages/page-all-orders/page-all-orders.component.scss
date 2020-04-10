@@ -1,7 +1,6 @@
 .all-orders{
-    margin-top: 10%;
+    margin-top: 1%;
     .listStatus{
-        margin-left: 10px;
         text-align: center;
         .active{
             background-color: #e52d27;
@@ -11,14 +10,9 @@
     }
 }
 
-@media only screen and (max-device-width: 768px) {
+@media only screen and (min-device-width: 768px) {
     .all-orders{
-        margin-top: 18%;
+       padding: 1%;
     }
 }
 
-@media only screen and (max-device-width: 480px) {
-    .all-orders{
-        margin-top: 25%;
-    }
-}

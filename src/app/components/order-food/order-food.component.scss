@@ -15,7 +15,7 @@
     display: flex;
     justify-content: center;
     border: 2pt solid  #e52d27;
-    width: 25%;
+    width: 30%;
 }
 
 .btn-post-order{
@@ -27,5 +27,9 @@
         width: 50%;
         box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.89);
     } 
+}
+
+.col-12{
+    padding: 0%;
 }
 

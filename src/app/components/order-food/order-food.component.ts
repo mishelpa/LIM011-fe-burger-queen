@@ -58,10 +58,8 @@ export class OrderFoodComponent implements OnInit {
   }
 
   postOrderFood() {
-    console.log(this.createOrderFood());
     this.firestoreService.postOrder(this.createOrderFood())
     .then(() => {
-      console.log('Documento creado exitósamente!');
       this.router.navigate(['/orders']);
     });
   }

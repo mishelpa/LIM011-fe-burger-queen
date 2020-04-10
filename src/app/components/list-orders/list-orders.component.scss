@@ -2,8 +2,6 @@
 .all-bill{
 
     justify-content: space-between;
-    margin-right: 2%;
-  
    
     .bill{
         padding-bottom: 10px;
@@ -30,6 +28,7 @@
   .details-order{
     font-size: 100%;
     margin-left: 5%;
+    margin-bottom: 2%;
   }
   
   .products-order{
@@ -37,7 +36,7 @@
     flex-direction: column;
     width: 90%;
     font-size: 80%;
-    margin-bottom: 10%;
+    margin-bottom: 8%;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.89);
     border: gray 1pt solid; 
     padding: 2% 1%;
@@ -94,18 +93,7 @@
   
   .orderDelivered{
     .header-order{
-      color: #560C06;
-    }
-    .btn-order:hover{
-      background-color:  #560C06;
+      color: #05B201;
     }
   }
   
-  @media only screen and (max-device-width: 768px) {
-    .all-bill{
-      justify-content: center;
-      .bill{
-        margin-left: 3%;
-      }
-    }
-  }

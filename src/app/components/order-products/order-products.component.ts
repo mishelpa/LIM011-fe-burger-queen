@@ -25,7 +25,6 @@ export class OrderProductsComponent implements OnInit {
         });
       });
       this.productsInOrders.sort((a, b) => a.data.type > b.data.type ? -1 : 1);
-      console.log(this.productsInOrders);
     });
   }
 

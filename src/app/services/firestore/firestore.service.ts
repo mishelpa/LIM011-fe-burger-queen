@@ -30,6 +30,14 @@ export class FirestoreService {
     return this.firestore.collection('orders').doc(idOrder).snapshotChanges();
   }
 
+  deleteOrder(idOrder) {
+    return this.firestore.collection('orders').doc(idOrder).delete();
+  }
+
+  updateOrder(idOrder: string, data: any) {
+    return this.firestore.collection('orders').doc(idOrder).set(data);
+  }
+
   addListProducts(order) {
     const indexProduct = this.products.findIndex(product => product.data.name === order.data.name);
 

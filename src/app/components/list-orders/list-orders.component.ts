@@ -33,40 +33,30 @@ export class ListOrdersComponent implements OnChanges {
   getOrdersbyId(idOrder) {
     this.firestoreService.getOrdersById(idOrder)
     .subscribe((orderSnapshot) => {
-      this.orderById = [];
-      this.orderById.push({
+      this.orderById = {
           id: orderSnapshot.payload.id,
           data: orderSnapshot.payload.data()
-        });
+        };
       console.log(this.orderById);
     }
       );
   }
 
-/*   deleteAllOrder(order) {
-    this.ordersService.deleteOrder(order)
-    .subscribe(() => {
-      window.location.reload();
-    });
+  deleteAllOrder(order) {
+    this.firestoreService.deleteOrder(order);
   }
 
   changeStatusOrder(order) {
-    if (order.status === 'pending') {
-      order.status = 'delivering';
-    } else if (order.status === 'delivering') {
-      order.status = 'delivered';
+    if (order.data.status === 'pending') {
+      order.data.status = 'delivering';
+    } else if (order.data.status === 'delivering') {
+      order.data.status = 'delivered';
     }
-    this.ordersService.updateOrder(order)
-    .subscribe(() => {
-      window.location.reload();
-    });
+    this.firestoreService.updateOrder(order.id, order.data);
   }
 
   cancelOrder(order) {
-    order.status = 'canceled';
-    this.ordersService.updateOrder(order)
-    .subscribe(() => {
-      window.location.reload();
-    });
-  } */
+    order.data.status = 'canceled';
+    this.firestoreService.updateOrder(order.id, order.data);
+  }
 }

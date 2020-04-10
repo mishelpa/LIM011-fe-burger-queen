@@ -4,26 +4,38 @@
     background: linear-gradient(to right, #b31217, #e52d27); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     height: 10%;
     border-radius: 10px;
-    margin: 10px;
-.logo{
-    width: 3%;
+    .responsive{
+        color: white;
+    }
+    .logo{
+        width: 10%;
+    }
+    .title{
+        padding-top: 15px;
+        padding-left: 10px;
+        font-family: 'Indie Flower', cursive;
+        font-weight: bolder;
+        font-size: 23px;
+        color: white;
+    }
+    .linknav{
+        font-family: 'Cabin', sans-serif;
+        font-size: 18px;
+        font-weight: bolder;
+        color: white
+    }
+    .linknav:hover{
+        color: #F3A953;
+    }
+    .linknav:focus{
+        color: #F3A953;
+    }
 }
-.title{
-    padding-top: 15px;
-    padding-left: 10px;
-    font-family: 'Indie Flower', cursive;
-    font-weight: bolder;
-    font-size: 23px;
-    color: white;
-}
-.linknav{
-    margin-right: 20px;
-    font-family: 'Cabin', sans-serif;
-    font-size: 18px;
-    font-weight: bolder;
-    color: white
-}
-.linknav:hover{
-    color: black;
-}
+
+@media only screen and (min-device-width: 768px) {
+    #mainNav{
+        .logo{
+            width: 3%;
+        }
+    }
 }

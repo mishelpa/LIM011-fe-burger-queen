@@ -13,8 +13,8 @@
           <span class="total-bill" ><b>TOTAL: {{getTotalBill()}}</b></span>
         </div>
         <div class="btn-post-order">
-          <button type="button" class="btn" (click)="postOrderFood()">Enviar Pedido</button>
+          <button type="button" [disabled]="!nameClient" class="btn" (click)="postOrderFood()">Enviar Pedido</button>
         </div>
       </div>
     </div>
-  </section>
+</section>
